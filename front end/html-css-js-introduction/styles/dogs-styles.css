@@ -1,0 +1,32 @@
+.logo {
+    font-size: 15em;
+}
+.main-class {
+    width: 100px;
+}
+.details-container {
+    width: 100px;
+}
+.details-image {
+    width: 100px;
+}
+.details-title {
+    display: block;
+}
+.thumbnails-list {
+    list-style: none;
+    width: 100px;
+}
+.thumbnails-item {
+    width: 100px;
+}
+.thumbnails-image {
+    width: 100px;
+}
+.thumbnails-title {
+    display: block;
+    width: 100px;
+}
+.thumbnails-anchor {
+    width: 100px;
+}
