@@ -1,32 +1,45 @@
 .logo {
     font-size: 3em;
+    color: grey;
+    margin-top: 50px;
+    margin-left: 50px;
 }
 .main-class {
-    width: 100px;
+    margin-left: 50px;
+
 }
 .details-container {
-    width: 100px;
+    margin-left: 13px;
 }
 .details-image {
     width: 100px;
+    margin-left: 50px;
 }
 .details-title {
     display: block;
+    width: 100px;
+    margin-left: 50px;
 }
 .thumbnails-list {
     list-style: none;
+    margin-left: ;
     width: 100px;
 }
 .thumbnails-item {
+    margin-left: 50px;
     width: 100px;
 }
 .thumbnails-image {
+    margin-left: 25px;
     width: 100px;
 }
 .thumbnails-title {
+    margin-left: 40px;
+    color: red;
     display: block;
     width: 100px;
 }
 .thumbnails-anchor {
+    
     width: 100px;
 }
