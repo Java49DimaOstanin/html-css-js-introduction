@@ -1,45 +1,87 @@
-.logo {
-    font-size: 3em;
-    color: grey;
-    margin-top: 50px;
-    margin-left: 50px;
+body {
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(196, 188, 188);
+}
+.logo  {
+    font-size: 2em;
+    background-color: rgb(248, 0, 0);
+    display: block;
+    text-align: center;
 }
 .main-class {
-    margin-left: 50px;
 
 }
 .details-container {
-    margin-left: 13px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 2.5vh;
+    
+
+
 }
 .details-image {
-    width: 150px;
-    margin-left: 50px;
+    width: 70vw;
+    height: 60vw;
+    border-radius: 25%;
+
+
 }
 .details-title {
-    display: block;
-    width: 100px;
-    margin-left: 50px;
+display: block;
+
 }
 .thumbnails-list {
-    list-style: none;
     
-    width: 100px;
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    max-height: 25vh;
+    overflow: auto;
+    justify-content:space-around;
+    padding-left: 0;
+    border: solid 1px rgb(44, 3, 3);
+    
+
 }
 .thumbnails-item {
-    margin-left: 50px;
-    width: 100px;
+    border-radius: 25%;
+    width: 20vw;
+    height: 20vw;
+    margin-top: 2.5vh;
+    border: solid red;
+    
+    
+    
+
+
 }
 .thumbnails-image {
-    margin-left: 25px;
-    width: 100px;
+    width: 20vw;
+    height: 15vw;
+    border-top-left-radius: 25%;
+    border-top-right-radius: 25%;
+    
+
 }
 .thumbnails-title {
-    margin-left: 40px;
-    color: red;
-    display: block;
-    width: 100px;
+    display: block; 
+    text-align: center;
+    height: 5vw;
+    background-color: rgb(8, 8, 8);
+    color: aliceblue;
+    margin-top: -4px;
+    width: 20vw;
+    /* height: 10vw; */
+    overflow: auto;
+    /* border-bottom: 25%; */
+    border-bottom-left-radius: 30px;
+    border-bottom-right-radius: 30px;
+    
 }
 .thumbnails-anchor {
-    
-    width: 100px;
+   text-decoration: none;
+   
 }
