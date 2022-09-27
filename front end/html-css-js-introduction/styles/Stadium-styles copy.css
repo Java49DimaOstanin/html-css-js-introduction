@@ -108,6 +108,9 @@ overflow: hidden;
         margin: 0;
         width: 25vw;
     }
+    body {
+        overflow: hidden;
+    }
     .main-class {
         flex-direction: row;
         justify-content: space-around;
