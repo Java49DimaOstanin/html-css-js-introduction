@@ -29,7 +29,7 @@ body {
    
 }
 .logo  {
-font-size: 2em;
+font-size: 1.2em;
 color: yellow;
 background-image: url(background/green2.jpg);
 /* background-color: bisque; */
@@ -167,15 +167,15 @@ overflow: hidden;
         margin-bottom: 0;
     }
     .details-title {
-        font-size: 1em;
+        font-size: 3vw;
         left: 15vw;
         bottom: 7vw;
     }
     .thumbnails-title {
-        font-size: 0.5em;
+        font-size: 1vw;
     }
 }
-@media ( min-width: 1000px) {
+@media ( min-width: 900px) {
     :root {
         --thumbnails-img-width: 12vw;
         --thumbnails-img-height: 8vw;
@@ -187,14 +187,14 @@ overflow: hidden;
     }
     .thumbnails-title{
         
-        font-size: 0.8em;
+        font-size: 1vw;
     }
     .details-image{
         width: 60vw;
         height: 50vw;
     }
     .logo{
-        font-size: 4em;
+        font-size: 3vw;
     }
     .details-container{
         margin-top: 5vh;
@@ -205,8 +205,8 @@ overflow: hidden;
         margin-bottom: -5;
     }
     .details-title{
-        font-size: 2em;
-        bottom: 7vw;
+        font-size: 2vw;
+        bottom: 20vw;
         right: 3vw;
 
     }
