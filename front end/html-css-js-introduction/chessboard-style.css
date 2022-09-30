@@ -4,6 +4,7 @@
 }
 body,html {
     height: 100%;
+    /* width: 100%; */
     
 }
 .main {
@@ -12,7 +13,7 @@ body,html {
 
 body {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     background-color: brown;
@@ -44,7 +45,42 @@ body {
     height: var(--cell-hight);
 }
 
-@media (min-width:560px)
-   
+@media (min-width: 560px)
+:root {
+    --cell-width: 3vw;
+    --cell-hight: 3vw;
+}
+.cell-white {
+    width: var(--cell-width);
+    height: var(--cell-hight);
+
+}
+.cell-black {
+    width: var(--cell-width);
+    height: var(--cell-hight);
+}
+.border {
+    width: var(--cell-width);
+    height: var(--cell-hight);
+}
+
+@media (min-width: 950px)
+:root {
+    --cell-width: 12vw;
+    --cell-hight: 12vw;
+}
+.cell-white {
+    width: var(--cell-width);
+    height: var(--cell-hight);
+
+}
+.cell-black {
+    width: var(--cell-width);
+    height: var(--cell-hight);
+}
+.border {
+    width: var(--cell-width);
+    height: var(--cell-hight);
+}
 
  
