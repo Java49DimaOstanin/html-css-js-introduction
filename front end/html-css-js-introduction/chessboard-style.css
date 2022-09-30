@@ -1,0 +1,50 @@
+:root {
+    --cell-width:4.4vw;
+    --cell-hight:4.4vw;
+}
+body,html {
+    height: 100%;
+    
+}
+.main {
+
+}
+
+body {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    background-color: brown;
+    margin: 0;
+}
+.cell-white {
+    background-color: bisque;
+    width: var(--cell-width);
+    height: var(--cell-hight);
+
+}
+.cell-black {
+    background-color: black;
+    width: var(--cell-width);
+    height: var(--cell-hight);
+}
+.board-row {
+    display: flex;
+    flex-direction: row;
+}
+.border {
+    background-color: burlywood;
+    font-size: 2vw;
+    color: aqua;
+    text-align: center;
+    vertical-align: middle;
+    border-color:solid rgb(216, 170, 18) 3px;
+    width: var(--cell-width);
+    height: var(--cell-hight);
+}
+
+@media (min-width:560px)
+   
+
+ 
