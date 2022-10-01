@@ -16,7 +16,7 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: brown;
+    background-color: rgb(253, 253, 253);
     margin: 0;
 }
 .cell-white {
@@ -37,10 +37,11 @@ body {
 .border {
     background-color: burlywood;
     font-size: 2vw;
-    color: aqua;
+    color: rgb(8, 8, 8);
     text-align: center;
     vertical-align: middle;
     border-color:solid rgb(216, 170, 18) 3px;
+    box-shadow: 0 1px 8px rgb(32, 61, 141);
     width: var(--cell-width);
     height: var(--cell-hight);
 }
