@@ -19,25 +19,19 @@ body, html {
 body {
    display: flex; 
    flex-direction: column;
-   background-image: url(background/thumb-1920-661309.jpg) ;
-   /* -moz-background-size: 100%;  */
-   /* -webkit-background-size: 100%;  */
-   /* -o-background-size: 100%;  */
+   background-image: url(background/green.jpg) ;
+  
    background-size: cover; 
-   /* background-repeat: no-repeat; */
-   /* background-image: 100vw; */
-   /* background-size: contain; */
 
-   /* background-color: azure; */
    margin: 0;
    
 }
 
 .logo  {
 font-size: 1.2em;
-color: yellow;
-background-image: url(background/green2.jpg);
-/* background-color: bisque; */
+color: #60246c;
+background-image: url(background/SL-090119-22970-03.jpg);
+background-size: cover; 
 display: block;
 text-align: center;
 font-family: lakeshore;
@@ -59,10 +53,28 @@ flex-grow: 1;
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-bottom: 10vh;
+    margin-bottom: 5vh;
     position: relative;
+    transition: 5s cubic-bezier(0.1, 2, 0.9, 1);
 
 }
+.details-frame {
+    position: relative;
+}
+.details-audio {
+    display: flex;
+    position: absolute;
+    right: 15vw;
+    bottom: 80vw;
+    width: 50vw;
+    height: 15vh;
+  align-items: center;
+
+  
+  
+}
+
+
 
 .hidden .details-container {
     display: none;
@@ -88,14 +100,15 @@ flex-grow: 1;
     width: 80vw;
     height: 70vw;
     border-radius: 25%;
-    border: solid 3px rgb(238, 234, 7);
+    border: solid 3px #ee8555;
 }
 .details-title {
 display: block;
 font-family: airstream;
-font-style: italic;
-color: rgb(209, 255, 2);
--webkit-text-stroke: 1px rgb(0, 0, 0);
+font-weight: bold;
+/* font-style: italic; */
+color: #f5ec6b;
+-webkit-text-stroke: 0.2px #60246c;
 position: absolute;
 /* size: 3vw; */
 font-size: 1.5em;
@@ -113,17 +126,26 @@ max-height: 25vh;
 overflow-y: auto;
 justify-content: space-around;
 padding-left: 0;
-
+/////////
+align-items: flex-start;
+//////////
 
 }
-
-
-
+::-webkit-scrollbar-track {
+    background-color: #f5ec6b;
+}
+::-webkit-scrollbar {
+    width: 10px;
+}
+::-webkit-scrollbar-thumb{
+    background: #60246c;
+    border-radius: 5px;
+}
 .thumbnails-item {
 max-width: var(--thumbnails-img-width);
 min-height: calc(var(--thumbnails-img-height) + var(--thumbnails-title-height));
 margin-top: 2.5vh;
-border: solid 3px rgb(238, 234, 7);
+border: solid 3px #ee8555;
 border-radius: 25%;
 overflow: hidden;
 }
@@ -134,12 +156,13 @@ overflow: hidden;
     box-shadow: 0 1px 8px rgb(255, 255, 255);
 }
 .thumbnails-title {
-    color: yellow;
+    color: #be375f;
     display: block; 
     text-align: center;
+    
     height: var(--thumbnails-title-height);
     overflow: auto;
-    background-color: rgb(16, 170, 55);
+    background-color: #f5ec6b;
     font-family: lakeshore;
     font-size: 0.5em;
     /* left: 3vw;
@@ -162,14 +185,11 @@ overflow: hidden;
 .thumbnails-item:active{
     border: solid 3px rgb(57, 7, 238);
 }
-/* @media(min-width: 450px) {
-    .details-title{
-        font-size: 5em;
-        left: 10vw;
-        bottom: 10vw;
 
-    } */
-
+.is-point{
+    transform: scale(0.001);    
+    transition: 0s;
+} 
 
 
 @media (min-width: 560px) {
@@ -206,7 +226,7 @@ overflow: hidden;
     .details-container {
         justify-content: center;
         align-items: center;
-        margin-bottom: 0;
+        margin-bottom: 15vh;
     }
     .details-title {
         font-size: 3vw;
@@ -227,6 +247,9 @@ overflow: hidden;
         flex-wrap: wrap; 
         margin-left: 2vw;
          justify-content: space-around;
+         ////////
+         align-items: flex-start; 
+         ////////          
     }
     .hidden .thumbnails-title {
         font-size: 1em;
@@ -236,6 +259,15 @@ overflow: hidden;
         --thumbnails-img-height: 15vw;
         --thumbnails-title-height: calc(var(--thumbnails-img-height)* 0.33) 
     }
+    .details-audio {
+         
+        right: 8vw;
+        bottom: -15vh;
+        width: 25vw;
+        height: 15vh;
+        
+    }
+    
 }
 @media ( min-width: 930px) {
     :root {
@@ -244,7 +276,7 @@ overflow: hidden;
         --thumbnails-title-height: calc(var(--thumbnails-img-height)* 0.25)
     }
     .hidden .thumbnails-title {
-        font-size: 1.5vw;
+        font-size: 2vw;
     }
     /* .thumbnails-list {
         padding-right: 2vw;
@@ -271,7 +303,7 @@ overflow: hidden;
     }
     .details-title{
         font-size: 3vw;
-        bottom: 45vw;
+        bottom: 2vw;
         right: 3vw;
         -webkit-text-stroke: 1px rgb(0, 0, 0);
 
@@ -286,5 +318,13 @@ overflow: hidden;
         right: 3vw;
        
         font-size: 3vh;
+    }
+    .details-audio {
+         
+        right: 10vw;
+        bottom: -15vh;
+        width: 25vw;
+        height: 15vh;
+        
     }
 }
