@@ -7,6 +7,16 @@ const mainClass = document.querySelector(".main-class");
 const detailsContainer = document.querySelector(".details-container");
 const HIDDEN = "hidden";
 const IS_POINT = "is-point";
+const music = document.getElementById("Audio")
+
+function playAudio() {
+    music.play();
+}
+function pauseAudio() {
+    music.pause();
+}
+
+
 function setDetails(anchor) { 
     detailsImage.setAttribute("src" ,anchor.getAttribute("data-details-image"));
     detailsTitle.innerHTML = anchor.getAttribute("data-details-title");
