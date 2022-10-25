@@ -7,12 +7,12 @@ const mainClass = document.querySelector(".main-class");
 const detailsContainer = document.querySelector(".details-container");
 const HIDDEN = "hidden";
 const IS_POINT = "is-point";
-const music = document.getElementById("Audio")
+
 
 function playAudio() {
     setTimeout(function() {
     detailsAudio.play();
-     },);
+     }, 1);
 }
 function pauseAudio(msecs) {
     setTimeout(function() {
