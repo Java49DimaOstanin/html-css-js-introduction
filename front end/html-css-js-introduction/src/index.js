@@ -10,16 +10,21 @@ const IS_POINT = "is-point";
 const music = document.getElementById("Audio")
 
 function playAudio() {
-    music.play();
+    setTimeout(function() {
+    detailsAudio.play();
+     },);
 }
-function pauseAudio() {
-    music.pause();
+function pauseAudio(msecs) {
+    setTimeout(function() {
+        detailsAudio.pause();
+      }, msecs);
 }
 
 
 function setDetails(anchor) { 
     detailsImage.setAttribute("src" ,anchor.getAttribute("data-details-image"));
     detailsTitle.innerHTML = anchor.getAttribute("data-details-title");
+    pauseAudio(1);
     detailsAudio.setAttribute("src" ,anchor.getAttribute("data-details-audio"));
 
 }
@@ -38,6 +43,10 @@ function showDetails() {
     setTimeout(function() {
         detailsContainer.classList.remove(IS_POINT);
     },1);
+
+
+    playAudio();
+    pauseAudio(5000);
 }
 function hideDetails() {
     mainClass.classList.add(HIDDEN);
