@@ -1,5 +1,7 @@
 
 function sumDigits(number) {
+   if (number < 0)
+		number = -number;
    // let sum;
          for( sum = 0 ,rem = 0;number > 0;  )   {
 
@@ -10,4 +12,4 @@ function sumDigits(number) {
          }
        return sum;
 }
-console.log("sum of digits" ,sumDigits(12345));
+console.log("sum of digits" ,sumDigits(-12345));
