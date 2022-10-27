@@ -10,4 +10,4 @@ function sumDigits(number) {
          }
        return sum;
 }
-console.log("sum of digits" ,sumDigits(1234));
+console.log("sum of digits" ,sumDigits(12345));
