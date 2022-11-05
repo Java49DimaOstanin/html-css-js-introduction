@@ -1,13 +1,12 @@
 function checkTeudatZehut(teudatStrNumber) {
 let TZnumber = +teudatStrNumber;
 // console.log("TZ" ,TZnumber);
-if (TZnumber.lenght < 9 || TZnumber.lenght > 9) {
+if (TZnumber.lenght < 9 || TZnumber.lenght > 9 ) {
     console.log("wrong number"); //don't understand why no work?
     return false;
 }
 let strARtz = "" +TZnumber;
 let newAR = Array.from(strARtz);
- 
 let arTZ = newAR.map(function(symbol, index) {
     return index % 2 == 0 ? parseInt(symbol) : multiplyXTwo(symbol) ;
     });
