@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>wordle</title>
+    <link rel="stylesheet" href="styles/wordle.css">
+</head>
+<body>
+    <input type="text" onchange="onChange(event)">
+    <section class="word-guess">
+        <div class="letter-guess"></div>
+
+        <div class="letter-guess"></div>
+
+        <div class="letter-guess"></div>
+
+        <div class="letter-guess"></div>
+
+        <div class="letter-guess"></div>
+
+        <div class="letter-guess"></div>
+
+        
+
+        <!-- <h1 class="counter-display">left trials</h1> -->
+
+
+
+    </section>
+    <label class="message-congs hidden"> Congratulations - you have guessed word </label>
+    <label class="message-fail hidden2"> Sorry – your guess trials have ended up</label>
+    <h1 class="counter-display">You have 3 trials</h1>
+
+
+    <script src="src/wordle.js">
+   
+    </script>
+</body>
+</html>
