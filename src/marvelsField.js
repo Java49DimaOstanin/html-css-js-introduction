@@ -24,7 +24,7 @@ const gameOverElement = document.querySelector(".game-over-message");
 const invitationElement = document.querySelector(".guess-invitation");
 const selectImage = document.querySelectorAll(".image");
 //const playAgainElement = document.getElementById("play-again");
-const helpInnerImage = document.querySelector(".contents");
+const helpInnerImage = document.querySelector(".contents")
 
 let flGameOver = false;
 let trials = 0;
@@ -62,8 +62,11 @@ function makeImage() {
     document.getElementById('content').appendChild(img);
  }
 function startGame() {
-    sectionElement.innerHTML = getDivsElements();
-    letterElements = document.querySelectorAll(".letter-guess");
+//    if(flGameOver) {
+        sectionElement.innerHTML = getDivsElements();
+        letterElements = document.querySelectorAll(".letter-guess");
+        flGameOver = false;
+//    }
     trials = 0;
     searchWordArrLen = 0;
     flGameOver = false;
@@ -91,18 +94,16 @@ function onChange(event) {
             letterElements[index].style.background=color;
         }
     });
-    if(searchWordArrLen === searchWordArr.length) {
+    if(searchWordArrLen == searchWordArr.length) {
         endGame(true);
     }
 }
 function endGame(isSuccess) {
-    if (isSuccess) {
+     if (isSuccess) {
   gameOverElement.innerHTML = ` <div style="width:480px"><iframe allow="fullscreen" frameBorder="0" height="300" 
   src="https://giphy.com/embed/BnDIcyVmgoHIz7NtFm/video" width="480"></iframe></div>`
         invitationElement.innerHTML = '';
-        
-        
-    }
+     }
    
     trialNumberElement.innerHTML = '';
     wordTrialsElement.innerHTML = '';
