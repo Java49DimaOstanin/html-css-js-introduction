@@ -15,19 +15,13 @@ let arStr2 = Array.from(str2);
     });
 
     arStr2.forEach(element => {
-        if (occurrences[element]) {
-            occurrences[element]--;
-            
-        } else {
-            occurrences[element] =  occurrences[element];
-            
-        }
+            occurrences[element]--;   
     });
     
     const isEmpty = Object.values(occurrences).every(x => x === 0);
     
     
-    // console.log(occurrences);
+    //  console.log(occurrences);
     return isEmpty;
  }
 let word = "yellow";
