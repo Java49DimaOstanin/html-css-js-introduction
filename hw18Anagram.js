@@ -28,19 +28,16 @@ let word = "yellow";
 
 
 console.log(isAnagram(word, 'weloly'));
-
 console.log(isAnagram(word, 'leloyw'));
-
 console.log(isAnagram(word, 'wolley'));
-
 console.log(isAnagram(word, 'weloyl'));
 
-
-
 console.log(isAnagram(word, 'weloll')); 
-
 console.log(isAnagram(word, 'leloy')); 
-
 console.log(isAnagram(word, 'wollet')); 
-
 console.log(isAnagram(word, 'weloyo'));
+
+
+function isAnagram1(str1,str2) {
+    return Array.from(str1).sort().join('') == Array.from(str2).sort().join('');
+}
