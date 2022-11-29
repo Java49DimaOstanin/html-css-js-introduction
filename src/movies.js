@@ -10,16 +10,16 @@ const moviesData = JSON.parse(jsonData);
 const sectionElements = document.querySelectorAll("section");
 
 const ulElement = document.querySelector(".movies-list");
-ulElement.innerHTML = ShowAll();
+ulElement.innerHTML = showAll();
 
 
 const elmentBest= document.querySelector(".movies-best");
-elmentBest.innerHTML = ShowBest();
+elmentBest.innerHTML = showBest();
 
 const elementLoser = document.querySelector(".movies-loser");
-elementLoser.innerHTML = ShowLoser();
+elementLoser.innerHTML = showLoser();
 
-function ShowBest(){
+function showBest(){
    const bestmovie = moviesData.results.reduce((bestRatingMovie, currentMovie) =>
     bestRatingMovie.vote_average > currentMovie.vote_average? bestRatingMovie : currentMovie);
     
@@ -35,7 +35,7 @@ function ShowBest(){
         return movie;
 }
 
-function ShowAll() {
+function showAll() {
    const arImages = moviesData.results.map(movie => 
         `<div class="full-data">
         <li class="movie-item"> <img class="movie-image" src="${httpPrefix}${movie.poster_path}"></li>
@@ -50,8 +50,8 @@ function show(index) {
     sectionElements.forEach(section => section.hidden = true);
     sectionElements[index].hidden = false;
 }
-function ShowLoser() {
-const loserMovie = moviesData.results((loserRatingMovie,currentMovie) =>
+function showLoser() {
+const loserMovie = moviesData.results.reduce((loserRatingMovie,currentMovie) =>
 loserRatingMovie.vote_average > currentMovie.vote_average ? currentMovie: loserRatingMovie);
     const movie =
         `<div class="full-data">

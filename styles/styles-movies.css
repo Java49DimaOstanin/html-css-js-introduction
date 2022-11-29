@@ -64,6 +64,7 @@ body {
     flex-direction: row;
     border-radius: 1%;
     border-color: #0000FF;
+    align-items: center;
     
 }
 .movie-item{
