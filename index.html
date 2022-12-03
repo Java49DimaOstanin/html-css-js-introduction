@@ -4,42 +4,43 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles/styles-movies.css">
-    <link rel="shortcut icon" href="styles/image/movie-850.png" type="image/x-icon">
-    <title>Movies</title>
+    <title>Form</title>
+    <link ref="stylesheet" href="styles/styles.css">
 </head>
 <body>
-    <header class="header"> MOVIES 
-    </header>
-    <div class="buttons">
-    <button class="button" onclick="show(0)">Show All Movies</button>
-    <button class="button" onclick="show(1)">Show Most Popular Movie</button>
-    <button class="button" onclick="show(2)">Show Least Popular Movie</button>
+   <form id="employee-form" onsubmit="onsumbit(event)" class="form-class">
+       <div class="two-imputs">
+        <input type="text" name="employee_name" placeholder="Enter employee name" required>
+        <input type="email" name="email" placeholder="Enter email" required>
+       </div>
+       <div class="date-label">
+        <label> Enter birthdate</label>
+        <input type="date" name="birthDate" placeholder="Birth Date"
+         onchange="checkSalary(event)" required>
+
+       </div>
+
+       <div class="two-inputs" >
+       <select name="department" required>
+        <option value hidden selected disabled>
+            --Select Department--
+        </option>
+        <option value="QA">QA</option>
+        <option value="Development">Development</option>
+        <option value="Managment">Managment</option>
+        <option value="Audit">Audit</option>
+       </select>
+       <input type="number" name="salary" placeholder="Enter salary"   
+       onchange="checkSalary(event)" required> 
     </div>
-    
-    <main class="main">
-    <section hidden>
-        <ul class="movies-list">
+    <div class="buttons">
+        <button type="sumbit"> Sumbit</button>
+        <button type="reset" > Reset</button>
+    </div>
 
-        </ul>
+    <div class="warning"> </div>
 
-    </section>
-    <section hidden>
-        <label class="movies-best">Kukureku</label>
-
-    </section>
-    <section hidden>
-        <ul class="movies-loser">
-             section 3
-        </ul>
-
-    </section>
-
-    </main>
-   <footer class="footer"> Copyright © Dima Ostanin .
-
-   </footer>
-    
-    <script src="src/movies.js"></script>
+</form>
+    <script src="src/form.js"></script>
 </body>
 </html>
