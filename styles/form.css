@@ -1,5 +1,43 @@
-body,html {
+body, html {
     height: 100%;
+}
+.form-title {
+    text-align: center;
+    font-size: 2em;
+    font-weight: bold;
+    height: 7vh;
+}
+.form-class {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1;
+}
+.two-inputs {
+    display: flex;
+    justify-content: space-around;
+    width: 80vw;
+    margin-top: 5vh;
+    
+}
+.date-label {
+    margin-top: 5vh;
+    display: flex;
+    flex-direction: column; 
+    height: 10vh;
+    justify-content: space-around;
+}
+.buttons {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 10vh;
+    width: 40vw;
+    
+}
+.error {
+    border-color: red;
+    color: red;
 }
 body {
     display: flex;
@@ -10,17 +48,16 @@ body {
 .header{
     display: flex;
     height: 15vh;
-    background-image: url(image/header.jpg);
-    background-size:cover ; 
+    background-color: #b0b0bb;
     text-align: center;
-    font-size: 10em;
+    font-size: 12em;
     color: rgb(255, 255, 255);
     text-shadow: 0 0 3px #030303, 0 0 5px #0000FF;
     align-items: center;
     justify-content: center;
     
 }
-.buttons{
+.buttons-main{
     display: flex;
     flex-direction: row; 
     align-items: flex-end;
@@ -36,7 +73,7 @@ body {
     border-width: 0.2em;
     border-color: #030303;
 }
-.button:hover,
+
 .button:focus {
   box-shadow: 0 0.5em 0.5em 0.4em var(--hover);
   transform: translateY(-0.25em);
@@ -46,8 +83,7 @@ body {
 .main{
     display: flex;
     flex-direction: column;
-    background-image: url(image/back.webp);
-    background-size: cover;
+    background-color: aliceblue;
     flex-grow: 1;   
 }
 .footer{
@@ -67,9 +103,6 @@ body {
     align-items: center;
     
 }
-.movie-item{
-    
-}
 .movie-data{
     display: flex;
     flex-direction: column;
@@ -87,9 +120,6 @@ body {
     text-shadow: 0 0 3px #030303, 0 0 5px #0000FF;
     align-items: center;
     justify-content: center;
-}
-.movie-image{
-    height: 25vh;
 }
 .overview{
     color: rgb(255, 255, 255);

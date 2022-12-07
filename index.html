@@ -1,46 +1,84 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Form</title>
-    <link ref="stylesheet" href="styles/styles.css">
+    <link rel="stylesheet" href="styles/form.css">
 </head>
+
 <body>
-   <form id="employee-form" onsubmit="onsumbit(event)" class="form-class">
-       <div class="two-imputs">
-        <input type="text" name="employee_name" placeholder="Enter employee name" required>
-        <input type="email" name="email" placeholder="Enter email" required>
-       </div>
-       <div class="date-label">
-        <label> Enter birthdate</label>
-        <input type="date" name="birthDate" placeholder="Birth Date"
-         onchange="checkSalary(event)" required>
+    <header class="form-title">
+        Employee Form
+    </header>
 
-       </div>
+    <div class="buttons-main">
+        <button class="button" onclick="show(0)">Show Form</button>
+        <button class="button" onclick="show(1)">Show emploees</button>
+        <button class="button" onclick="show(2)">Sort employees </button>
+        </div>
+        
+        <main class="main">
+        <section hidden>
+            <ul class="form-list">
+                <form id="employee_form" onsubmit="onSubmit(event)" class="form-class">
+                    <div class="two-inputs">
+                        <input type="text" name="employee_name" required placeholder="Enter employee name">
+                        <input type="email" name="email" placeholder="Enter email" required>
+                    </div>
+                    <div class="date-label">
+                        <label >Enter birthdate</label>
+                        <input type="date"  name="birthDate"  required onchange="onChange(event)">
+                        
+                    </div>
+                    <p id="date_error" class="error"></p>
+                    <div class="two-inputs">
+                        <select name="department" required>
+                            <option value hidden selected disabled>
+                                --Select Department--
+                            </option>
+                            <option value="QA">QA</option>
+                            <option value="Development">Development</option>
+                            <option value="Management">Management</option>
+                            <option value="Audit">Audit</option>
+                        </select>
+                        <input type="number" name="salary" placeholder="Enter salary"
+                         onchange="onChange(event)" required>
+                         
+                    </div>
+                    <p id="salary_error" class="error"></p> 
+                    <div class="buttons">
+                        <button type="submit">Submit</button>
+                        <button type="reset">Reset</button>
+                    </div>
+            
+            
+            
+                </form>
+            </ul>
+    
+        </section>
+        <section hidden>
+            <label class="show-emploees">Kukureku</label>
+    
+        </section>
+        <section hidden>
+            <ul class="movies-loser">
+                 section 3
+            </ul>
+    
+        </section>
+    
+        </main>
+       <footer class="footer"> Copyright © Dima Ostanin .
+    
+       </footer>
 
-       <div class="two-inputs" >
-       <select name="department" required>
-        <option value hidden selected disabled>
-            --Select Department--
-        </option>
-        <option value="QA">QA</option>
-        <option value="Development">Development</option>
-        <option value="Managment">Managment</option>
-        <option value="Audit">Audit</option>
-       </select>
-       <input type="number" name="salary" placeholder="Enter salary"   
-       onchange="checkSalary(event)" required> 
-    </div>
-    <div class="buttons">
-        <button type="sumbit"> Sumbit</button>
-        <button type="reset" > Reset</button>
-    </div>
 
-    <div class="warning"> </div>
-
-</form>
+    </form>
     <script src="src/form.js"></script>
 </body>
+
 </html>
