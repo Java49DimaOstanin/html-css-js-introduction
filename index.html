@@ -10,63 +10,57 @@
 </head>
 
 <body>
-    <header class="form-title">
-        Library
-    </header>
+    <div class="buttons-menu">
+        <button onclick="showSection(0)" class="btn-menu">Add book</button>
+        <button onclick="showSection(1)" class="btn-menu">Show all books</button>
+        <button onclick="showSection(2)" class="btn-menu">Show books by pages</button>
+        <button onclick="showSection(3)" class="btn-menu">Show books by author</button>
+    </div>
+    <section id="add-employee" hidden>
+        <header class="form-title">
+            Employee Form
+        </header>
+        <form id="employee_form"  class="form-class">
+            <div class="two-inputs">
+                <input type="text" name="employee_name" required placeholder="Enter employee name">
+                <input type="email" name="email" placeholder="Enter email" required>
+            </div>
+            <div class="date-label">
+                <label>Enter birthdate</label>
+                <input type="date" name="birthDate" required id="date_input">
 
-    <div class="buttons-main">
-        <button class="button" onclick="show(0)">Adding new book </button>
-        <button class="button" onclick="show(1)">Presenting all the books</button>
-        <button class="button" onclick="show(2)">Presenting the books </button>
-        <button class="button" onclick="show(3)"></button>
-        </div>
-        
-        <main class="main">
-        <section id="add-employee" hidden>
-            <ul class="form-list">
-                <form id="employee_form" onsubmit="onSubmit(event)" class="form-class">
-                    <div class="two-inputs">
-                        <input type="text" name="employee_name" required placeholder="Enter employee name">
-                        <input type="email" name="email" placeholder="Enter email" required>
-                    </div>
-                    <div class="date-label">
-                        <label>Enter birthdate</label>
-                        <input type="date" name="birthDate" required onchange="onChange(event)">
-        
-                    </div>
-                    <p id="date_error" class="error"></p>
-                    <div class="two-inputs">
-                        <select name="department" required>
-                            <option value hidden selected disabled>
-                                --Select Department--
-                            </option>
-                            <option value="QA">QA</option>
-                            <option value="Development">Development</option>
-                            <option value="Management">Management</option>
-                            <option value="Audit">Audit</option>
-                        </select>
-                        <input type="number" name="salary" placeholder="Enter salary" onchange="onChange(event)" required>
-        
-                    </div>
-                    <p id="salary_error" class="error"></p>
-                    <div class="buttons">
-                        <button type="submit">Submit</button>
-                        <button type="reset">Reset</button>
-                    </div>
-        
-        
-        
-                </form>
-            </ul>
-    
-        </section >
-        <section  id="show-all-employees" hidden>
-            <ul class="employees-list" id="employees-all">
+            </div>
+            <p id="date_error" class="error"></p>
+            <div class="two-inputs">
+                <select name="department" required>
+                    <option value hidden selected disabled>
+                        --Select Department--
+                    </option>
+                    <option value="QA">QA</option>
+                    <option value="Development">Development</option>
+                    <option value="Management">Management</option>
+                    <option value="Audit">Audit</option>
+                </select>
+                <input type="number" name="salary" placeholder="Enter salary" id="salary_input" required>
 
-            </ul>
-        </section>
-        <section id="show-employees-salary" hidden>
-           <form id="salary-form" class="form-class" onsubmit="onSubmitSalary(event)">
+            </div>
+            <p id="salary_error" class="error"></p>
+            <div class="buttons">
+                <button type="submit">Submit</button>
+                <button type="reset">Reset</button>
+            </div>
+
+
+
+        </form>
+    </section>
+    <section id="show-all-employees" hidden>
+        <ul class="employees-list" id="employees-all">
+
+        </ul>
+    </section>
+    <section id="show-employees-salary" hidden>
+        <form id="salary-form" class="form-class" onsubmit="onSubmitSalary(event)">
             <div class="two-inputs">
                 <input type="number" name="salaryFrom" placeholder="Enter salary 'From'" onchange="onChangeSalaryFrom(event)" required>
                 <input type="number" name="salaryTo" placeholder="Enter salary 'To'" onchange="onChangeSalaryTo(event)" required>
@@ -80,15 +74,24 @@
         <ul class="employees-list" id="employees-salary">
 
         </ul>
-        </section>
+    </section>
     
-        </main>
-       <footer class="footer"> Copyright © Dima Ostanin .
-    
-       </footer>
+    <section id="show-books-by-author" hidden>
+        <form id="author-form" class="author-form-class" onsubmit="onSubmitAuthor(event)">
+            <div class="two-inputs">
+                <input id="authorbig" type="text" name="author-name" placeholder="Looking for author"  required>
+                
+            </div>
+            <div class="buttons">
+                <button type="submit">Search</button>
+                
+            </div>
+        </form>
+        <p id="salary_form_error" class="error center"></p>
+        <ul class="book-list" id="books-by-author">
 
-
-    </form>
+        </ul>
+    </section>
     <script src="src/main.js" type="module"></script>
 </body>
 

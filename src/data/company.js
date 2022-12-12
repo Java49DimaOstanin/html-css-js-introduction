@@ -12,4 +12,7 @@ export class Company {
     getEmployeesBySalary(salaryFrom, salaryTo) {
         return this.employees.filter(e => e.salary >= salaryFrom && e.salary < salaryTo);
     }
+    getBooksByAuthor(author) {
+        return this.employees.filter(e => e.employee_name == author);
+    }
 }
