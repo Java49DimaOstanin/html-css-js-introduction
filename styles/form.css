@@ -3,6 +3,33 @@ body, html {
 }
 body {
     background-color: aliceblue;
+    overflow: hidden;
+}
+.header{
+    display: flex;
+    background-size:cover ; 
+    text-align: center;
+    font-size: 5em;
+    color: rgb(255, 255, 255);
+    text-shadow: 0 0 3px #030303, 0 0 5px #080808;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1vh;
+    
+    
+}
+.footer{
+    display: flex;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: black;
+    font-size: 2em;
+    color: white;
+     height: 5vh;
+     justify-content: center;
+     text-align: center;
 }
 .form-title {
     text-align: center;
@@ -23,6 +50,12 @@ body {
     margin-top: 5vh;
     
 }
+.two-inputss{
+    display: flex;
+    justify-content: center;
+    margin-top: 2vh;
+
+}
 .date-label {
     margin-top: 5vh;
     display: flex;
@@ -36,14 +69,23 @@ body {
     margin-top: 10vh;
     width: 40vw;
     
+    
+}
+.buttonss{
+    display: flex;
+    justify-content: center;
+    margin-top: 2vh;
+   
 }
 .error {
     border-color: red;
     color: red;
 }
 .active {
-    background-color: blue;
-    color: white;
+    box-shadow: 0 0.5em 0.5em 0.4em var(--hover);
+  transform: translateY(0.65em);
+  background-color: rgb(170, 153, 153);
+  text-shadow: 0 0 3px #030303, 0 0 5px #fefefe;
 }
 .employees-list {
     display: flex;
@@ -56,10 +98,10 @@ body {
 }
 .employees-item {
     max-width: 30vw;
-    background-color: blue;
+    background-color: rgb(30, 136, 236);
     border-radius: 25%;
     text-align: center;
-    border: 2px solid blue;
+    border: 2px solid rgb(0, 0, 0);
     margin-top: 10vh;
     overflow: hidden;
 }
@@ -74,13 +116,48 @@ body {
 }
 .buttons-menu {
     display: flex;
-    justify-content: center;
+    flex-direction: row; 
+    align-items: flex-end;
 }
-.btn-menu+.btn-menu {
-    margin-left: 10vw;
+.btn-menu {
+    height: 3vh;
+    width: 33vw;
+    bottom: 0;
+    border: solid beige;
+    color: black;
+    font-style: oblique;
+    background-color: white;
+    border-width: 0.2em;
+    border-color: #030303;
 }
 .center {
     text-align: center;
+}
+.search{
+    position: relative;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    padding: 10px;
+    transition-duration: 500ms;
+    cursor: pointer;
+    font-size: 15px;
+    border: 1px solid white;
+    overflow: hidden;
+    
+
+}
+.search:hover{
+    border : 1px solid #ff9950;
+}
+.search:focus {
+    width: 200px;
+    cursor: text;
+    padding-left: 40px;
+    color: rgb(128, 42, 42);
+    outline: node;
+    border: 1px solid #ff9950;
+    border-radius: 25%;
 }
 
 
