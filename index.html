@@ -62,10 +62,10 @@
         </ul>
     </section>
     <section id="show-employees-salary" hidden>
-        <form id="salary-form" class="form-class" onsubmit="onSubmitSalary(event)">
+        <form id="salary-form" class="form-class" >
             <div class="two-inputs">
-                <input  type="number" name="salaryFrom" placeholder="Enter page 'From'" onchange="onChangeSalaryFrom(event)" required>
-                <input  type="number" name="salaryTo" placeholder="Enter page 'To'" onchange="onChangeSalaryTo(event)" required>
+                <input  type="number" id="salaryFrom" name="salaryFrom" placeholder="Enter page 'From'"  required>
+                <input  type="number" id="salaryTo" name="salaryTo" placeholder="Enter page 'To'"  required>
             </div>
             <div class="buttons">
                 <button type="submit">Search</button>
