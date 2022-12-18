@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Form</title>
-    <link rel="stylesheet" href="styles/form.css">
+    <link rel="stylesheet" href="styles/styles.css">
 </head>
 
 <body>
@@ -19,21 +19,21 @@
         <button onclick="showSection(2)" class="btn-menu">Show books by pages</button>
         <button onclick="showSection(3)" class="btn-menu">Show books by author</button>
     </div>
-    <section id="add-employee" hidden>
+    <section id="add-book" hidden>
         
-        <form id="employee_form"  class="form-class">
+        <form id="book_form" class="book-form-class">
             <div class="two-inputs">
-                <input type="text" name="employee_name" required placeholder="Enter author name">
-                <input type="text" name="email" placeholder="Enter book name" required>
+                <input class="search" type="text" name="book_title" required placeholder="Enter book title">
+                <input class="search" type="text" name="author" placeholder="Enter author name" required>
             </div>
             <div class="date-label">
-                <label>Enter publish date</label>
-                <input type="date" name="birthDate" required id="date_input">
+                <label>Enter publishing date</label>
+                <input class="search" type="date" name="publishingDate" required id="date_input">
 
             </div>
             <p id="date_error" class="error"></p>
             <div class="two-inputs">
-                <select name="department" required>
+                <select name="Genre" required>
                     <option value hidden selected disabled>
                         --Select Genre--
                     </option>
@@ -45,10 +45,10 @@
                     <option value="Romance">Romance</option>
                     <option value="Biography">Biography</option>
                 </select>
-                <input type="number" name="salary" placeholder="Enter pages" id="salary_input" required>
+                <input type="number" class="search" name="pages" placeholder="Enter pages" id="pages_input" required>
 
             </div>
-            <p id="salary_error" class="error"></p>
+            <p id="pages_error" class="error"></p>
             <div class="buttons">
                 <button type="submit">Submit</button>
                 <button type="reset">Reset</button>
@@ -61,36 +61,36 @@
 
         </ul>
     </section>
-    <section id="show-employees-salary" hidden>
-        <form id="salary-form" class="form-class" >
+    <section id="show-books-pages" hidden>
+        <form id="pages-form" class="form-class" >
             <div class="two-inputs">
-                <input  type="number" id="salaryFrom" name="salaryFrom" placeholder="Enter page 'From'"  required>
-                <input  type="number" id="salaryTo" name="salaryTo" placeholder="Enter page 'To'"  required>
+                <input class="search" type="number" id="pageFrom" name="pagesFrom" placeholder="From pages"  required>
+                <input class="search" type="number" id="pageTo" name="pagesTo" placeholder="To pages"  required>
             </div>
             <div class="buttons">
                 <button type="submit">Search</button>
                 <button type="reset">Reset</button>
             </div>
         </form>
-        <p id="salary_form_error" class="error center"></p>
-        <ul class="employees-list" id="employees-salary">
+        <p id="pages_form_error" class="error center"></p>
+        <ul class="books-list" id="books-pages">
 
         </ul>
     </section>
     
     <section id="show-books-by-author" hidden>
-        <form id="author-form" class="author-form-class" onsubmit="onSubmitAuthor(event)">
-            <div class="two-inputss">
-                <input id="authorbig" class="search" type="text" name="author-name" placeholder="Looking for author"  required>
-                
+        
+        <form id="author-form" class="author-form-class">
+            <div class="one-input">
+                <label> </label>
+                <input class="search" type="text" name="author-name" id="author" placeholder="Enter author name" required>
             </div>
-            <div class="buttonss">
-                <button  type="submit">Search</button>
+            <div class="buttons-one">
+                <button type="submit">Search</button>
                 
             </div>
         </form>
-        <p id="salary_form_error" class="error center"></p>
-        <ul class="employees-list" id="books-by-author">
+        <ul class="books-list" id="books-author">
 
         </ul>
     </section>

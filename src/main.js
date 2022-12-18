@@ -1,64 +1,67 @@
-import { Company } from "./data/company.js";
-import { EmployeeForm } from "./ui/employeeForm.js";
-import { EmployeesList } from "./ui/EmployeeList.js";
+import { Library } from "./data/library.js";
+import { BookForm } from "./ui/BookForm.js";
+import { PagesForm } from "./ui/PagesForm.js";
+import { AuthorForm } from "./ui/AuthorForm.js";
+import { BooksList } from "./ui/BooksList.js";
 
-import { SalariesForm } from "./ui/SalariesForm.js";
-
-const MIN_SALARY = 50;
-const MAX_SALARY = 2000;
-const MIN_YEAR = new Date ('1980-01-01')
+const MIN_PAGES = 50;
+const MAX_PAGES = 2000;
+const minDateString = '1980-01-01';
 const ACTIVE = "active"
 
-const listAllEmployees = new EmployeesList("employees-all");
-const listEmployeesBySalary = new EmployeesList("employees-salary")
+const listAllBooks = new BooksList("books-all");
+const listBooksByPages = new BooksList("books-pages");
+const listBookByAuthor = new BooksList("books-author");
+//======================================================
 const sectionsElement = document.querySelectorAll("section");
 const buttonsMenuElement = document.querySelectorAll(".buttons-menu *");
-const bookListelement = document.getElementById("books-by-author")
-const authorInputElements = document.querySelectorAll(".author-form-class  [name]")
 /************************************************************************** */
 
+const library = new Library();
 
+const paramsBookForm = {
+    idForm: "book_form", idPagesInput: "pages_input",
+    idDateInput: "date_input", idPagesError: "pages_error", idDateError: "date_error",
+    minPages: MIN_PAGES, maxPages: MAX_PAGES, minDate: new Date(minDateString)
+};
+const bookForm = new BookForm(paramsBookForm);
+bookForm.addSubmitHandler(book => library.addBook(book));
+//=====================================================================
+//functions of Pages Form
 
-const company = new Company();
-
-const paramSalaries = { idForm: "salary-form" ,idSalaryInput: "salaryFrom",
-idSalaryToInput: "salaryTo" ,idErrorMessage: "salary_form_error" }
-const salariesForm = new SalariesForm(paramSalaries);
-salariesForm.addSubmitHandler((salariesObj) => {
-    const employee = company.getEmployeesBySalary(salariesObj.salaryFrom, 
-        salariesObj.salaryTo);
-    listEmployeesBySalary.showEmployees(employee);
+const paramsPagesForm = {
+    idForm: "pages-form", idPageFromInput: "pageFrom",
+    idPageToInput: "pageTo", idErrorMessage: "pages_form_error"
+}
+const pagesForm = new PagesForm(paramsPagesForm);
+pagesForm.addSubmitHandler((pagesObj) => {
+    const from = pagesObj.pageFrom;
+    const to = pagesObj.pageTo;
+    const books = library.getBooksbyPages(from, to);
+    listBooksByPages.showBooks(books);
 })
 
-
-
-const employeeForm = new EmployeeForm({idForm: "employee_form", idDateInput: "date_input",
-       idSalaryInput: "salary_input", idDateError: "date_error", idSalaryError: "salary_error",
-       minYear: MIN_YEAR, minSalary: MIN_SALARY, maxSalary: MAX_SALARY})
- employeeForm.addSubmitHandler((employee) => company.hireEmployee(employee))
-/************************************************************* */
-function onSubmitAuthor(event) {
-    event.preventDefault();
-    const author = Array.from(authorInputElements)[0].value;
-    const books = company.getBooksByAuthor(author);
-    bookListelement.innerHTML = getEmployeeItems(books); 
-}
-/********************************************************************************** */
-
-
+//=====================================================================================
 function showSection(index) {
     buttonsMenuElement.forEach(e => e.classList.remove(ACTIVE));
     sectionsElement.forEach(e => e.hidden = true)
     buttonsMenuElement[index].classList.add(ACTIVE);
     sectionsElement[index].hidden = false;
     if (index == 1) {
-        const employees = company.getAllEmployees();
-        listAllEmployees.showEmployees(employees);
+        const books = library.getAllBooks();
+        listAllBooks.showBooks(books);
     }
 }
 
-
-
+//=================================================
+// Functions of the Author form 
+const paramsAuthorForm = {
+    idForm: "author-form", idAuthorInput: "author"
+}
+const authorForm = new AuthorForm(paramsAuthorForm);
+authorForm.addSubmitHandler( (author) => {
+    const books = library.getBooksbyAuthor(author);
+    listBookByAuthor.showBooks(books);
+})
+//=====================
 window.showSection = showSection;
-
-window.onSubmitAuthor = onSubmitAuthor
