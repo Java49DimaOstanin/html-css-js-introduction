@@ -45,7 +45,7 @@ pagesForm.addSubmitHandler((pagesObj) => {
 function showSection(index) {
     buttonsMenuElement.forEach(e => e.classList.remove(ACTIVE));
     sectionsElement.forEach(e => e.hidden = true)
-    buttonsMenuElement[index].classList.add(ACTIVE);
+     buttonsMenuElement[index].classList.add(ACTIVE);
     sectionsElement[index].hidden = false;
     if (index == 1) {
         const books = library.getAllBooks();
